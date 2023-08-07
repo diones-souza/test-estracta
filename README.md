@@ -1,32 +1,32 @@
-# Teste Prático - Desenvolvedor
+# Practical Test - Developer
 
-Este é um exemplo de aplicativo API construído com Python e Flask.
+This is an example API application built with Python and Flask.
 
-## Configuração
+## Settings
 
-1. Crie um ambiente virtual e ative-o:
+1. Create a virtual environment and activate it:
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # No Windows: venv\Scripts\activate
+source venv/bin/activate # On Windows: venv\Scripts\activate
 ```
 
-2. Instale as dependências:
+2. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Copie o env de example e gere uma key
+3. Copy env from example and generate a key
 
 ```bash
 cp .env.example .env
 python app/console/commands/generate_key.py
 ```
 
-## Migrações de Banco de Dados
+## Database Migrations
 
-Para criar e aplicar migrações de banco de dados, execute o seguinte comando:
+To create and apply database migrations, run the following command:
 
 ```bash
 alias flask='python -m flask'
@@ -35,23 +35,23 @@ flask db migrate
 flask db upgrade
 ```
 
-## Execução
+## Execution
 
-Para executar o aplicativo, use o seguinte comando:
+To run the application, use the following command:
 
 ```bash
 flask run
 ```
 
-O aplicativo estará disponível em http://localhost:5000.
+The application will be available at http://localhost:5000.
 
-## Rotas
+## Routes
 
-- /api/users - Rota para criar um novo usuário (POST).
-- /api/users/<id> - Rota para visualizar, atualizar ou excluir um usuário (GET, PUT, DELETE).
+- /api/users - Route to create a new user (POST).
+- /api/users/<id> - Route to view, update or delete a user (GET, PUT, DELETE).
 
-Rotas protegidas por autenticação JWT (PUT, DELETE).
+Routes protected by JWT authentication (PUT, DELETE).
 
-## Autenticação
+## Authentication
 
-Para autenticar, faça uma solicitação POST para /api/auth/login com um JSON no corpo da solicitação contendo as informações de autenticação (username e password). Isso retornará um token JWT que pode ser usado para acessar rotas protegidas.
+To authenticate, make a POST request to /api/auth/login with a JSON in the request body containing the authentication information (username and password). This will return a JWT token that can be used to access protected routes.
